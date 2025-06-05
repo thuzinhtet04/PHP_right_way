@@ -81,3 +81,27 @@ switch type
 $x = (int)"5"; 
 var_dump($x) ; // int(5)
 ```
+**Integer**
+integer can be 8digit of minus and plus
+```php
+$x = 5 ; // 5 base 10
+$y = 0x2A; // 42 , 0x make it hexadecimal
+$z = 055;// 45 , 0 predefine make it octalnumber
+$a = 0b11 ; // 3 , ob make it binary number
+PHP_INT_MAX ;// give you max integer of integer data type
+PHP_INT_MIN ; // give you minumnm integer of integer data type
+#over or lower of min or max make change data type to float
+```
+**Float**
+```php
+$x = 2.1e2 ; //210 , e mean 10 power
+$y = 2.1e-2; // 0.021;
+PHP_FLOAT_MAX ;
+ PHP_FLOAT_MIN ; 
+ #be careful using float with ceil and floor , don't compare float directly  
+ #there is NAN(not a number) , INF(infinity) , you can get those when calculation 
+ is_infinite($z) // return true or false , check it is infinity 
+ is_finite($a) // revert of is_infinite()
+ is_nan();
+ floatval(5) // return float(5) , same like  $x = (float) 5;
+```
