@@ -130,3 +130,11 @@ echo $test; // Hello $x
  #             world 
 ?>
 ```
+**Array**
+```php
+$array = ['helo','workd','adads'];
+echo $array[-1] ;// error happen , not like javascript
+echo count($array) ;//3 , length of array
+$array[] = "new"  ; // append new to $array 
+print_r($array); ['helo','workd','adads','new']
+```
