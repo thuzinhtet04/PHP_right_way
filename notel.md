@@ -105,3 +105,28 @@ PHP_FLOAT_MAX ;
  is_nan();
  floatval(5) // return float(5) , same like  $x = (float) 5;
 ```
+
+1.8
+**Heredoc and Nowdoc**
+```php
+#heredoc is support variable 
+<?php
+$x =3;
+$test = <<<END//<-no space here
+Hello $x
+workd
+END;
+echo $test; // Hello 3
+ #             world 
+?>
+#Nowdocs does not support variable
+<?php
+$x =3;
+$test = <<<'END'//<-no space here
+Hello $x
+workd
+END;
+echo $test; // Hello $x
+ #             world 
+?>
+```
