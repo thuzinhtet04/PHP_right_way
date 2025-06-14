@@ -137,4 +137,79 @@ echo $array[-1] ;// error happen , not like javascript
 echo count($array) ;//3 , length of array
 $array[] = "new"  ; // append new to $array 
 print_r($array); ['helo','workd','adads','new']
+$assocArray = [
+    "name" => "John",
+    "age" => 30,
+    "email" => "john@example.com"
+];
+echo $assocArray["name"]; // Output: John
+foreach ($assocArray as $key => $value) {
+    echo "$key: $value\n";
+}
+#duplicate keys overwrite the first one
+$deplicate_array = [true => "a" , 1 => "b" , "1" => "c" , 1.8 => "d"] ; // [1 => d ] , 1.8 overwrite all of 1 , true also 1
+
+array_pop($array); // pop remove the last item
+array_shift($array); // shift remove the first one
+#shift and pop reindex the array that overwrite the manual index number 
+#but remove using unset($array[2]) not make reindex the array
+#casting
+$x = 5;
+var_dump((array) $x) ; // Array ([0] => 5)
+$test =['a' => 1 , 'b' => null];
+var_dump(array_key_exists("b" , $test)) ; // true 
+var_dump(isset("b" , $test)) ; // false , cause value is null 
+```
+# PHP Spaceship Operator (`<=>`)
+
+The **spaceship operator** (`<=>`) was introduced in **PHP 7**. It is used for **three-way comparisons**, returning an integer based on the relationship between two values.
+
+## Syntax
+
+```php
+$result = $a <=> $b;
+```
+
+## Return Values
+
+- Returns `-1` if `$a` is less than `$b`
+- Returns `0`  if `$a` is equal to `$b`
+- Returns `1`  if `$a` is greater than `$b`
+
+## Works With
+
+- Integers
+- Floats
+- Strings
+- Arrays (element-wise)
+- Objects like `DateTime`
+
+## Examples
+
+### Numeric Comparison
+
+```php
+echo 3 <=> 4; // -1
+echo 4 <=> 4; // 0
+echo 5 <=> 4; // 1
+```
+
+### String Comparison
+
+```php
+echo "apple" <=> "banana";   // -1
+echo "banana" <=> "banana"; // 0
+echo "cherry" <=> "banana"; // 1
+```
+
+### Sorting Example with `usort()`
+
+```php
+$numbers = [7, 2, 10, 4];
+
+usort($numbers, function($a, $b) {
+    return $a <=> $b;
+});
+
+print_r($numbers); // [2, 4, 7, 10]
 ```
